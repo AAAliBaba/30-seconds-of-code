@@ -3,7 +3,7 @@ title: getNeighbors
 tags: array,beginner
 ---
 
-Generates an array containing the immediate neighbors of an element in a 2D array (in clockwise order).
+Generates an array containing the immediate neighbors of an element in a 2D array.
 
 - Helper array neighborRows contains neighbors' row index relative to element.
 - Helper array neighborColumns contains neighbors' column index relative to element.
@@ -14,8 +14,8 @@ Generates an array containing the immediate neighbors of an element in a 2D arra
 const getNeighbors = (row, column, array2D) => {
   let neighbors = [];
 
-  const neighborRows = [-1, -1, -1, 0, 1, 1, 1, 0];
-  const neighborColumns = [-1, 0, 1, 1, 1, 0, -1, -1];
+  const neighborRows = [-1, -1, -1, 0, 0, 1, 1, 1];
+  const neighborColumns = [-1, 0, 1, -1, 1, -1, 0, 1];
 
   for(let i = 0; i < 8; ++i) {
     let nextRow = row + neighborRows[i];
@@ -35,6 +35,6 @@ let array = [
   [7, 8, 9]
 ];
 
-getNeighbors(1, 1, array); // [1, 2, 3, 6, 9, 8, 7, 4]
-getNeighbors(0, 2, array); // [6, 5, 2]
+getNeighbors(1, 1, array); // [1, 2, 3, 4, 6, 7, 8, 9]
+getNeighbors(0, 2, array); // [2, 5, 6]
 ```
